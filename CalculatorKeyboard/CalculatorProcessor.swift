@@ -25,9 +25,9 @@ class CalculatorProcessor {
     
     func toggleSign() -> String {
         if currentOperand != "0" {
-            if currentOperand.starts(with: "-") {
+            if currentOperand.hasPrefix("-") {
                 let startIndex = currentOperand.index(currentOperand.startIndex, offsetBy: 1)
-                currentOperand = String(currentOperand[startIndex...])
+                currentOperand = currentOperand.substring(from: startIndex)
             } else {
                 currentOperand = "-" + currentOperand
             }
